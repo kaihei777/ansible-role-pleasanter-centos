@@ -110,3 +110,6 @@
   with_items:
     - src: Rds.json.j2
       dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Rds.json
+  tags:
+    - pleasanter
+    - pleasanter_build
