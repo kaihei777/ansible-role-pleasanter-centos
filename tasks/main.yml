@@ -13,15 +13,21 @@
 
 - name: "install .NetCORE 2.2"
   yum:
-    name: dotnet-sdk-2.2
+    name: "{{ packages }}"
     state: present
+  vars:
+    packages:
+      - dotnet-sdk-2.2
   tags:
     - dotnet
 
 - name: "install mssql-server 2017"
   yum:
-    name: mssql-server
+    name: "{{ packages }}"
     state: present
+  vars:
+    packages:
+      - mssql-server
   tags:
     - mssql
 
@@ -113,3 +119,12 @@
   tags:
     - pleasanter
     - pleasanter_build
+
+- name: "Run build codedefiner script"
+  shell: "sh codedefiner.sh"
+  args:
+    chdir: /Pleasanter/cmdnetcore
+  tags:
+    - pleasanter
+    - pleasanter_build
+    - pleasanter_db
