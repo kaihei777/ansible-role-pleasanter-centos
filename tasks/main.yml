@@ -64,3 +64,12 @@
       - unixODBC-devel
   environment:
     ACCEPT_EULA: "Y"
+
+- name: "install mssql GDI"
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - libgdiplus
+
