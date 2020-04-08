@@ -1,0 +1,4 @@
+---
+# tasks file for pleasanter-centos
+- include_role:
+    name: geerlingguy.git
