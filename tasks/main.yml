@@ -11,7 +11,7 @@
 - name: "Linux Software Repository for Microsoft Products"
   yum:
     name: "{{ packages_microsoft_com }}"
-    state: latest
+    state: present
 
 - name: "install .NetCORE 2.2"
   yum:
