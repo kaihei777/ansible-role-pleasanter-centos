@@ -9,3 +9,4 @@
     name: geerlingguy.git
 - include_role:
     name: onegreyonewhite.package_installer
+    public: yes
