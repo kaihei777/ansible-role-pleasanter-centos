@@ -3,7 +3,7 @@
 - name: "Linux Software Repository for Microsoft Products"
   yum:
     name: "{{ packages_microsoft_com }}"
-    state: present
+    state: latest
 
 - include_role:
     name: geerlingguy.git
