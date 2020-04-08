@@ -1,4 +1,3 @@
-- src: arillso.repositories
 - src: geerlingguy.repo-epel
 - src: geerlingguy.git
 - src: onegreyonewhite.package_installer

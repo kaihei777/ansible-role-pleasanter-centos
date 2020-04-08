@@ -1,13 +1,7 @@
 ---
 # defaults file for pleasanter-centos
-# arillso.repositories
-repositories:
-  centos:
-    - name: 'microsoft'
-      state: present
-      description: 'Linux Software Repository for Microsoft Products'
-      baseurl: https://packages.microsoft.com/config/rhel/$releasever/packages-microsoft-prod.rpm
-
 # onegreyonewhite.package_installer
 system_packages:
   - dotnet-sdk-2.2-2.2.105-1
+
+packages_microsoft_com: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
