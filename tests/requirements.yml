@@ -1,2 +1,5 @@
 - src: geerlingguy.git
-
+- src: onegreyonewhite.package_installer
+- src: https://github.com/kaihei777/ansible-role-pleasanter-centos.git
+  version: develop
+  name: kaihei777.ansible_role_pleasanter_centos

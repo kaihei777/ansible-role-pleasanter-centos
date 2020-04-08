@@ -1,6 +1,6 @@
 ---
-- hosts: localhost
-  connection: local
-  remote_user: root
+- hosts: pleasanter
+  become: yes
+  # remote_user: root
   roles:
-    - ..
+    - kaihei777.ansible_role_pleasanter_centos
