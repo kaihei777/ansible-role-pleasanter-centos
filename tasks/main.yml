@@ -8,20 +8,16 @@
 #     name: onegreyonewhite.package_installer
 #     public: yes
 
-- name: "Linux Software Repository for Microsoft Products"
-  yum:
-    name: "{{ packages_microsoft_com }}"
-    state: present
+- name: "Add msprod repository"
+  shell: yum-config-manager --add-repo={{ msprod_repo }}
+
+- name: "Add mssql-server repository"
+  shell: yum-config-manager --add-repo={{ mssql_server_repo}}
 
 - name: "install .NetCORE 2.2"
   yum:
     name: dotnet-sdk-2.2
     state: present
-
-- name: "Add mssql-server repository"
-  shell: yum-config-manager --add-repo={{ mssql_server_repo}}
-  args:
-    creates: /etc/yum.repos.d/mssql-server.repo
 
 - name: "install mssql-server 2017"
   yum:
@@ -46,11 +42,6 @@
     fi
     echo Running mssql-conf setup...
     sudo MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PID=$MSSQL_PID /opt/mssql/bin/mssql-conf -n setup accept-eula
-
-- name: "Add msprod repository"
-  shell: yum-config-manager --add-repo={{ msprod_repo}}
-  args:
-    creates: /etc/yum.repos.d/msprod.repo
 
 - name: "remove mssql-tools and unixODBC developer"
   yum:
