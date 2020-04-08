@@ -98,7 +98,7 @@
     - pleasanter
 
 - name: "Run build script"
-  shell: build.sh
+  shell: "sh build.sh"
   args:
     chdir: /Pleasanter
   tags:
