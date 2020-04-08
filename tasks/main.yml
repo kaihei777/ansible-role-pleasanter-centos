@@ -100,7 +100,7 @@
 - name: "Run build script"
   shell: "sh build.sh"
   args:
-    chdir: /Pleasanter
+    chdir: /Pleasanter/cmdnetcore
   tags:
     - pleasanter
     - pleasanter_build
