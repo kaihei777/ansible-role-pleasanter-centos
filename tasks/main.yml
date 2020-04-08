@@ -1,5 +1,13 @@
 ---
 # tasks file for pleasanter-centos
+- include_role:
+    name: geerlingguy.git
+    public: yes
+
+# - include_role:
+#     name: onegreyonewhite.package_installer
+#     public: yes
+
 - name: "Linux Software Repository for Microsoft Products"
   yum:
     name: "{{ packages_microsoft_com }}"
@@ -10,10 +18,8 @@
     name: dotnet-sdk-2.2
     state: present
 
-- include_role:
-    name: geerlingguy.git
-    public: yes
+- name: Add mssql-server repository
+  shell: yum-config-manager --add-repo={{ mssql_server_repo}}
+  args:
+    creates: /etc/yum.repos.d/mssql-server.repo
 
-- include_role:
-    name: onegreyonewhite.package_installer
-    public: yes
