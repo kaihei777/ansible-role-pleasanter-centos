@@ -78,3 +78,5 @@
     repo: https://github.com/Implem/Implem.Pleasanter.NetCore.git
     dest: /Pleasanter
 
+- name: "Run build script"
+  script: /Pleasanter/cmdnetcore/build.sh
