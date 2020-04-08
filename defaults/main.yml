@@ -1,7 +1,7 @@
 ---
 # defaults file for pleasanter-centos
 mssql_server_repo: https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
-msprod_repo: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+msprod_repo: https://packages.microsoft.com/config/rhel/7/prod.repo
 
 # onegreyonewhite.package_installer
 update_packages: yes
