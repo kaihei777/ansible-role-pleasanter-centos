@@ -1,34 +1,37 @@
 ---
 # tasks file for pleasanter-centos
-- include_role:
-    name: geerlingguy.git
-    public: yes
-
-# - include_role:
-#     name: onegreyonewhite.package_installer
-#     public: yes
-
 - name: "Add msprod repository"
   shell: yum-config-manager --add-repo={{ msprod_repo }}
+  tags:
+    - dotnet
+    - mssql
 
 - name: "Add mssql-server repository"
   shell: yum-config-manager --add-repo={{ mssql_server_repo}}
+  tags:
+    - mssql
 
 - name: "install .NetCORE 2.2"
   yum:
     name: dotnet-sdk-2.2
     state: present
+  tags:
+    - dotnet
 
 - name: "install mssql-server 2017"
   yum:
     name: mssql-server
     state: present
+  tags:
+    - mssql
 
 - name: "stop service mssql-server on debian, if running"
   systemd:
     name: mssql-server
     state: stopped
   ignore_errors: True
+  tags:
+    - mssql
 
 - name: "mssql-server unattended-install"
   shell: |
@@ -42,6 +45,8 @@
     fi
     echo Running mssql-conf setup...
     sudo MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PID=$MSSQL_PID /opt/mssql/bin/mssql-conf -n setup accept-eula
+  tags:
+    - mssql
 
 - name: "remove mssql-tools and unixODBC developer"
   yum:
@@ -53,6 +58,8 @@
       - unixODBC-devel
       - unixODBC-utf16
       - unixODBC-utf16-devel
+  tags:
+    - mssql
 
 - name: "install mssql-tools and unixODBC developer"
   yum:
@@ -64,6 +71,8 @@
       - unixODBC-devel
   environment:
     ACCEPT_EULA: "Y"
+  tags:
+    - mssql
 
 - name: "install mssql GDI"
   yum:
@@ -72,11 +81,24 @@
   vars:
     packages:
       - libgdiplus
+  tags:
+    - mssql
+
+- include_role:
+    name: geerlingguy.git
+    public: yes
+  tags:
+    - pleasanter
 
 - name: "clone Pleasanter"
   git:
     repo: https://github.com/Implem/Implem.Pleasanter.NetCore.git
     dest: /Pleasanter
+  tags:
+    - pleasanter
 
 - name: "Run build script"
-  script: /Pleasanter/cmdnetcore/build.sh
+  shell: /Pleasanter/cmdnetcore/build.sh
+  tags:
+    - pleasanter
+    - pleasanter_build
