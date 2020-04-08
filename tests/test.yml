@@ -2,5 +2,7 @@
 - hosts: pleasanter
   become: yes
   # remote_user: root
+  vars:
+    mssql_sa_password: "eqHKYcjp"
   roles:
     - kaihei777.ansible_role_pleasanter_centos
