@@ -46,4 +46,24 @@
   args:
     creates: /etc/yum.repos.d/msprod.repo
 
+- name: "remove mssql-tools and unixODBC developer"
+  yum:
+    name: "{{ packages }}"
+    state: absent
+  vars:
+    packages:
+      - mssql-tools
+      - unixODBC-devel
+      - unixODBC-utf16
+      - unixODBC-utf16-devel
 
+- name: "install mssql-tools and unixODBC developer"
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - mssql-tools
+      - unixODBC-devel
+  environment:
+    ACCEPT_EULA: "Y"
