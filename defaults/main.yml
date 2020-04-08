@@ -2,7 +2,21 @@
 # defaults file for pleasanter-centos
 packages_microsoft_com: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 mssql_server_repo: https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
+msprod_repo: https://packages.microsoft.com/config/rhel/7/prod.repo
+
 # onegreyonewhite.package_installer
 update_packages: yes
 # system_packages:
 #   - dotnet-sdk-2.2
+
+# mssql-server
+# Use the following variables to control your install:
+
+# Password for the SA user (required)
+mssql_sa_password: YourStrong!Passw0rd
+
+# Product ID of the version of SQL server you're installing
+# Must be evaluation, developer, express, web, standard, enterprise, or your 25 digit product key
+# Defaults to developer
+mssql_pid: express
+

@@ -18,8 +18,32 @@
     name: dotnet-sdk-2.2
     state: present
 
-- name: Add mssql-server repository
+- name: "Add mssql-server repository"
   shell: yum-config-manager --add-repo={{ mssql_server_repo}}
   args:
     creates: /etc/yum.repos.d/mssql-server.repo
+
+- name: "install mssql-server 2017"
+  yum:
+    name: mssql-server
+    state: present
+
+- name: "mssql-server unattended-install"
+  shell: |
+    MSSQL_SA_PASSWORD='{{ mssql_sa_password }}'
+    MSSQL_PID='{{ mssql_pid }}'
+    SQL_ENABLE_AGENT='y'
+    if [ -z $MSSQL_SA_PASSWORD ]
+    then
+      echo Environment variable MSSQL_SA_PASSWORD must be set for unattended install
+      exit 1
+    fi
+    echo Running mssql-conf setup...
+    sudo MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PID=$MSSQL_PID /opt/mssql/bin/mssql-conf -n setup accept-eula
+
+- name: "Add msprod repository"
+  shell: yum-config-manager --add-repo={{ msprod_repo}}
+  args:
+    creates: /etc/yum.repos.d/msprod.repo
+
 
