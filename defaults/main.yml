@@ -4,4 +4,4 @@ packages_microsoft_com: https://packages.microsoft.com/config/centos/7/packages-
 # onegreyonewhite.package_installer
 update_packages: yes
 system_packages:
-  - dotnet-sdk-2.2-2.2.105-1
+  - dotnet-sdk-2.2
