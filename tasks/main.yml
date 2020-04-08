@@ -3,6 +3,7 @@
 - name: "Linux Software Repository for Microsoft Products"
   yum_repository:
     name: microsoft
+    description: "microsoft YUM repo"
     baseurl: "{{ packages_microsoft_com }}"
 - include_role:
     name: geerlingguy.git
