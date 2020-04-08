@@ -5,8 +5,12 @@
     msg: "{{ repositories['centos'] }}"
 - name: debug var res_exists
   debug:
-    msg: "repositories['centos'] | default(false)"
-    
+    msg: repositories['centos'] | default(false)
+# - name: "Linux Software Repository for Microsoft Products"
+#   yum_repository:
+#     name: microsoft
+#     description: "microsoft YUM repo"
+#     baseurl: "{{ repositories['centos'][] }}"
 - include_role:
     name: arillso.repositories
 - include_role:
