@@ -98,7 +98,9 @@
     - pleasanter
 
 - name: "Run build script"
-  shell: /Pleasanter/cmdnetcore/build.sh
+  shell: build.sh
+  args:
+    chdir: /Pleasanter
   tags:
     - pleasanter
     - pleasanter_build
