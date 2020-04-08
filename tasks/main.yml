@@ -3,6 +3,10 @@
 - name: debug var res_exists
   debug:
     msg: "{{ repositories['centos'] }}"
+- name: debug var res_exists
+  debug:
+    msg: "repositories['centos'] | default(false)"
+    
 - include_role:
     name: arillso.repositories
 - include_role:
