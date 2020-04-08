@@ -1,5 +1,8 @@
 ---
 # tasks file for pleasanter-centos
+- name: debug var res_exists
+  debug:
+    msg: "{{ repositories['centos'] }}"
 - include_role:
     name: arillso.repositories
 - include_role:
