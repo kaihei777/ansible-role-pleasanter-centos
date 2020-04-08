@@ -1,8 +1,15 @@
 ---
 # defaults file for pleasanter-centos
+# arillso.repositories
+repositories:
+  centos:
+    - name: 'microsoft-prod'
+      state: present
+      description: 'EPEL YUM repo'
+      baseurl: https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+      key: https://packages.microsoft.com/keys/microsoft.asc
+
 # onegreyonewhite.package_installer
 update_packages: yes
 system_packages:
   - dotnet-sdk-2.2-2.2.105-1
-
-packages_microsoft_com: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm

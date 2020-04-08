@@ -1,12 +1,13 @@
 ---
 # tasks file for pleasanter-centos
-- name: "Linux Software Repository for Microsoft Products"
-  yum_repository:
-    name: microsoft
-    description: "microsoft YUM repo"
-    baseurl: "{{ packages_microsoft_com }}"
+- include_role:
+    name: arillso.repositories
+    public: yes
+
 - include_role:
     name: geerlingguy.git
+    public: yes
+
 - include_role:
     name: onegreyonewhite.package_installer
     public: yes
