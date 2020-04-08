@@ -28,6 +28,12 @@
     name: mssql-server
     state: present
 
+- name: "stop service mssql-server on debian, if running"
+  systemd:
+    name: mssql-server
+    state: stopped
+  ignore_errors: True
+
 - name: "mssql-server unattended-install"
   shell: |
     MSSQL_SA_PASSWORD='{{ mssql_sa_password }}'
