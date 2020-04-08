@@ -1,0 +1,5 @@
+Host pleasanter
+  HostName pleasanter.asd-labo.net
+  User centos
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/pk-pleasanter.pem

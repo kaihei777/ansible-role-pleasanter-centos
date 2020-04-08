@@ -1,6 +1,8 @@
 ---
 # tasks file for pleasanter-centos
 - include_role:
+    name: arillso.repositories
+- include_role:
     name: geerlingguy.git
 - include_role:
     name: onegreyonewhite.package_installer
