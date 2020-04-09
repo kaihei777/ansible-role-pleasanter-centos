@@ -1,5 +1,11 @@
 ---
 # tasks file for pleasanter-centos
+- include_role:
+    name: robertdebock.selinux
+    public: yes
+  tags:
+    - selinux
+
 - name: "Add msprod repository"
   shell: yum-config-manager --add-repo={{ msprod_repo }}
   tags:
