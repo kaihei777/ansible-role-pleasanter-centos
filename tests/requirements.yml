@@ -4,6 +4,7 @@
 - src: geerlingguy.repo-epel
 - src: geerlingguy.git
 - src: geerlingguy.nginx
+- src: geerlingguy.ntp
 - src: holms.fqdn
 - src: 0x0i.systemd
 - src: https://github.com/kaihei777/ansible-role-pleasanter-centos.git
