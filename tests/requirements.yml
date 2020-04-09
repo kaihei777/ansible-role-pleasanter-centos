@@ -4,6 +4,7 @@
 - src: geerlingguy.repo-epel
 - src: geerlingguy.git
 - src: geerlingguy.nginx
+- src: holms.fqdn
 - src: https://github.com/kaihei777/ansible-role-pleasanter-centos.git
   version: develop
   name: kaihei777.ansible_role_pleasanter_centos

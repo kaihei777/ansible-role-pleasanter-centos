@@ -3,6 +3,9 @@
   become: yes
   vars:
     mssql_sa_password: "sS.$qXBJLnrf"
+    hostname: "pleasanter"
+    fqdn: "pleasanter.asd-labo.net"
     server_name: "pleasanter.asd-labo.net"
   roles:
-    - kaihei777.ansible_role_pleasanter_centos
+    - { role: kaihei777.ansible_role_pleasanter_centos, tags: [pleasanter] }
+    - { role: holms.fqdn, tags: [fqdn] }
