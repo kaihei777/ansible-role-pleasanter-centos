@@ -2,11 +2,10 @@
 # tasks file for pleasanter-centos
 - include_role:
     name: robertdebock.selinux
+    public: yes
     apply:
       tags:
         - selinux
-  vars:
-    selinux_state: disabled
   tags:
     - selinux
 
@@ -103,6 +102,9 @@
 - include_role:
     name: geerlingguy.git
     public: yes
+    apply:
+      tags:
+        - pleasanter
   tags:
     - pleasanter
 
