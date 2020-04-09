@@ -205,3 +205,15 @@
       - "80"
   tags:
     - firewall
+
+# Reminder
+- name: "install python36"
+  yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - python36
+  tags:
+    - pleasanter
+    - reminder
