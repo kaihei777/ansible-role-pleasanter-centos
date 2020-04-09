@@ -126,6 +126,7 @@
   tags:
     - pleasanter
     - pleasanter_build
+    - pleasanter_conf
 
 - name: "Run build codedefiner script"
   shell: "sh codedefiner.sh"
