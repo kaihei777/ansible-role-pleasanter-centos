@@ -9,8 +9,10 @@
     ntp_timezone: "Asia/Tokyo"
     ntp_area: "asia"
     locale_lang: "ja_JP.utf8"
+    selinux_state: disabled
   roles:
     - { role: holms.fqdn, tags: [fqdn] }
     - { role: robertdebock.locale, tags: [locale] }
     - { role: geerlingguy.ntp, tags: [ntp] }
+    - { role: robertdebock.selinux, tags: [selinux] }
     - { role: kaihei777.ansible_role_pleasanter_centos, tags: [pleasanter] }

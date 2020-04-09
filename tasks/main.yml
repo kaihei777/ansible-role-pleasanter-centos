@@ -1,15 +1,5 @@
 ---
 # tasks file for pleasanter-centos
-- include_role:
-    name: robertdebock.selinux
-    apply:
-      tags:
-        - selinux
-  vars:
-    # The state, either disabled, permissive or enforcing.
-    selinux_state: disabled
-  tags:
-    - selinux
 
 - name: "Add msprod repository"
   shell: yum-config-manager --add-repo={{ msprod_repo }}
@@ -101,7 +91,8 @@
   tags:
     - mssql
 
-- include_role:
+- name: "install git"
+  include_role:
     name: geerlingguy.git
     public: yes
     apply:
@@ -117,7 +108,7 @@
   tags:
     - pleasanter
 
-- name: "Run build script"
+- name: "Run pleasanter build script"
   shell: "sh build.sh"
   args:
     chdir: /Pleasanter/cmdnetcore
@@ -125,11 +116,13 @@
     - pleasanter
     - pleasanter_build
 
-- name: "setup conf file"
+- name: "setup pleasanter conf file"
   template: src={{ item.src }} dest={{ item.dest }}
   with_items:
     - src: Rds.json.j2
       dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Rds.json
+    - src: Mail.json.j2
+      dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Mail.json
   tags:
     - pleasanter
     - pleasanter_build
@@ -174,7 +167,8 @@
     - pleasanter_build
     - systemd
 
-- include_role:
+- name: "install nginx"
+  include_role:
     name: geerlingguy.nginx
     apply:
       tags:
@@ -197,4 +191,15 @@
   tags:
     - nginx
 
-
+- name: "setup firewall"
+  include_role:
+    name: geerlingguy.firewall
+    apply:
+      tags:
+        - firewall
+  vars:
+    firewall_allowed_tcp_ports:
+      - "22"
+      - "80"
+  tags:
+    - firewall
