@@ -123,6 +123,7 @@
       dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Rds.json
     - src: Mail.json.j2
       dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Mail.json
+  notify: restart pleasanter
   tags:
     - pleasanter
     - pleasanter_build

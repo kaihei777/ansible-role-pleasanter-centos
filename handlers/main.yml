@@ -1,2 +1,7 @@
 ---
 # handlers file for pleasanter-centos
+- name: "restart pleasanter"
+  service:
+    name: pleasanter
+    state: restarted
+  ignore_errors: True

@@ -35,7 +35,7 @@ server_name: "pleasanter.example.com"
 # Pleasanter
 # ----------
 # Pleasanter Mail
-smtp_host: null
+smtp_host: "localhost"
 smtp_port: 25
 smtp_user_name: null
 smtp_password: null
