@@ -31,9 +31,3 @@ mssql_lcid: "1041"
 server_name: "pleasanter.example.com"
 # ----------
 
-# ----------
-# geerlingguy.ntp
-# ----------
-ntp_timezone: "Asia/Tokyo"
-ntp_area: "asia"
-# ----------

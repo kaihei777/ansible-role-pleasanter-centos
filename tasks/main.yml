@@ -11,18 +11,6 @@
   tags:
     - selinux
 
-- include_role:
-    name: geerlingguy.ntp
-    apply:
-      tags:
-        - ntp
-  vars:
-    # The state, either disabled, permissive or enforcing.
-    ntp_timezone: {{ ntp_timezone }}
-    ntp_area: {{ ntp_area }}
-  tags:
-    - ntp
-
 - name: "Add msprod repository"
   shell: yum-config-manager --add-repo={{ msprod_repo }}
   tags:
