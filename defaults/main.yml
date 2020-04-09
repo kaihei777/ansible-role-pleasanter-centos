@@ -34,6 +34,8 @@ server_name: "pleasanter.example.com"
 # ----------
 # Pleasanter
 # ----------
+reminderschedules_url: "http://localhost/pleasanter/reminderschedules/remind?NoLog=1"
+
 # Pleasanter Mail
 smtp_host: '"localhost"'
 smtp_port: 25

@@ -5,6 +5,7 @@
     mssql_sa_password: "sS.$qXBJLnrf"
     hostname: "pleasanter"
     fqdn: "pleasanter.asd-labo.net"
+    reminderschedules_url: "https://pleasanter.asd-labo.net/reminderschedules/remind?NoLog=1"
     server_name: "pleasanter.asd-labo.net"
     ntp_timezone: "Asia/Tokyo"
     ntp_area: "asia"

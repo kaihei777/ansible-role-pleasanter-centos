@@ -123,6 +123,8 @@
       dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Rds.json
     # - src: Mail.json.j2
     #   dest: /Pleasanter/publish/Implem.Pleasanter/App_Data/Parameters/Mail.json
+    - src: Reminder.py.j2
+      dest: /Pleasanter/tools/Reminder.py
   notify: restart pleasanter
   tags:
     - pleasanter
