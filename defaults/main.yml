@@ -24,3 +24,9 @@ mssql_pid: "express"
 # localization 1041:japanese
 mssql_lcid: "1041"
 # ----------
+
+# ----------
+# geerlingguy.nginx
+# ----------
+server_name: "pleasanter.example.com"
+# ----------
