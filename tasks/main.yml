@@ -43,14 +43,14 @@
   shell: |
     MSSQL_SA_PASSWORD='{{ mssql_sa_password }}'
     MSSQL_PID='{{ mssql_pid }}'
-    SQL_ENABLE_AGENT='y'
+    MSSQL_LCID='{{ mssql_lcid }}'
     if [ -z $MSSQL_SA_PASSWORD ]
     then
       echo Environment variable MSSQL_SA_PASSWORD must be set for unattended install
       exit 1
     fi
     echo Running mssql-conf setup...
-    sudo MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PID=$MSSQL_PID /opt/mssql/bin/mssql-conf -n setup accept-eula
+    sudo MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD MSSQL_PID=$MSSQL_PID MSSQL_LCID=$MSSQL_LCID /opt/mssql/bin/mssql-conf -n setup accept-eula
   tags:
     - mssql
 
