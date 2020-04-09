@@ -6,6 +6,8 @@
     apply:
       tags:
         - selinux
+    vars:
+      selinux_state: disabled
   tags:
     - selinux
 

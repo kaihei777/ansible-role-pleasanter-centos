@@ -2,12 +2,6 @@
 # defaults file for pleasanter-centos
 
 # ----------
-# robertdebock.selinux
-# ----------
-selinux_state: disabled
-# ----------
-
-# ----------
 # microsoft packages yum repository
 # ----------
 mssql_server_repo: https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo
