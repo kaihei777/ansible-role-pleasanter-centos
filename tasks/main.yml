@@ -2,6 +2,9 @@
 # tasks file for pleasanter-centos
 - include_role:
     name: robertdebock.selinux
+    apply:
+      tags:
+        - selinux
   vars:
     selinux_state: disabled
   tags:
