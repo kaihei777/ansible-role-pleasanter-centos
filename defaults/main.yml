@@ -39,7 +39,7 @@ smtp_host: '"localhost"'
 smtp_port: 25
 smtp_user_name: 'null'
 smtp_password: 'null'
-smtp_enable_ssl: false
+smtp_enable_ssl: 'false'
 fixed_from: 'null'
 allowed_from: 'null'
 support_from: '"\"Pleasanter.org\" &lt;support@pleasanter.org&gt;"'
