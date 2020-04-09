@@ -5,6 +5,7 @@
     mssql_sa_password: "sS.$qXBJLnrf"
     hostname: "pleasanter"
     fqdn: "pleasanter.asd-labo.net"
+    ip_address: "127.0.0.1"
     server_name: "pleasanter.asd-labo.net"
   roles:
     - { role: kaihei777.ansible_role_pleasanter_centos, tags: [pleasanter] }
