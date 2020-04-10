@@ -116,6 +116,15 @@
     - pleasanter
     - pleasanter_build
 
+- name: "Create Pleasanter tools directory"
+  file:
+    path: /Pleasanter/tools
+    state: directory
+  tags:
+    - pleasanter
+    - pleasanter_conf
+    - reminder
+
 - name: "setup pleasanter conf file"
   template: src={{ item.src }} dest={{ item.dest }}
   with_items:
@@ -130,6 +139,7 @@
     - pleasanter
     - pleasanter_build
     - pleasanter_conf
+    - reminder
 
 - name: "Run build codedefiner script"
   shell: "sh codedefiner.sh"
