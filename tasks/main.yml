@@ -229,3 +229,17 @@
   tags:
     - pleasanter
     - reminder
+
+- name: "setup crontab"
+  include_role:
+    name: robertdebock.cron
+    apply:
+      tags:
+        - reminder
+  vars:
+    cron_jobs:
+      - name: reboot Pleasanter Reminder
+          job: "@reboot python3 /Pleasanter/tools/Reminder.py"
+  tags:
+    - reminder
+

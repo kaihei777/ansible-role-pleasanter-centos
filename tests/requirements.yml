@@ -2,6 +2,7 @@
 - src: robertdebock.reboot
 - src: robertdebock.selinux
 - src: robertdebock.locale
+- src: robertdebock.cron
 - src: geerlingguy.repo-epel
 - src: geerlingguy.git
 - src: geerlingguy.nginx
