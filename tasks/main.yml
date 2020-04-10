@@ -239,7 +239,7 @@
   vars:
     cron_jobs:
       - name: reboot Pleasanter Reminder
-          job: "@reboot python3 /Pleasanter/tools/Reminder.py"
+        job: "@reboot python3 /Pleasanter/tools/Reminder.py"
   tags:
     - reminder
 
